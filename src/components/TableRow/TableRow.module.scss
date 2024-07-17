@@ -1,0 +1,15 @@
+.table-row {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  text-align: left;
+
+  &__td {
+    border: 1px solid var(--color-border);
+    padding: 10px;
+  }
+
+  &__td:hover {
+   cursor: pointer;
+  }
+}

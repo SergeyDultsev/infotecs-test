@@ -1,0 +1,17 @@
+body{
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 200px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
