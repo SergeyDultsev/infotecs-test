@@ -7,6 +7,10 @@
   &__td {
     border: 1px solid var(--color-border);
     padding: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 50px;
   }
 
   &__td:hover {

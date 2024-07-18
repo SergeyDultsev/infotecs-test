@@ -5,6 +5,8 @@ export function SortTable({ onSortChange }) {
     return (
       <div className={SortTableStyle['sort']}>
           <ButtonApp onClick={() => onSortChange('unsorted')} text={"По умолчанию"}></ButtonApp>
+          <ButtonApp onClick={() => onSortChange('alphabetIncreasing')} text={"По возрастание (алфавит)"}></ButtonApp>
+          <ButtonApp onClick={() => onSortChange('alphabetDescending')} text={"По убыванию (алфавит)"}></ButtonApp>
           <ButtonApp onClick={() => onSortChange('increasing')} text={"По возрастанию (Возраст)"}></ButtonApp>
           <ButtonApp onClick={() => onSortChange('descending')} text={"По убыванию (Возраст)"}></ButtonApp>
           <ButtonApp onClick={() => onSortChange('male')} text={"По полу (Мужчины)"}></ButtonApp>

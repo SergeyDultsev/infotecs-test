@@ -2,6 +2,7 @@
   width: 100%;
   border-collapse: collapse;
   text-align: left;
+  table-layout: fixed;
 
   &__head {
     background-color: var(--color-main);
@@ -15,6 +16,19 @@
   &__cell {
     text-align: left;
     padding: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 50px;
+    position: relative;
+    .resizer {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 5px;
+      cursor: col-resize;
+      user-select: none;
+    }
   }
 
   &__header {

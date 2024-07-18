@@ -3,7 +3,13 @@ import {InputApp} from "@/components/ui/Input/InputApp.jsx";
 import {SortTable} from "@/components/SortTable/SortTable.jsx";
 import {Table} from "@/components/Table/Table.jsx";
 import getUsers from "@/api/getUsers.js";
-import {increasingSort, descendingSort, filterByGenderMale, filterByGenderFemale} from "@/shared/utils/sortFunctions.js";
+import {
+    increasingSort,
+    descendingSort,
+    filterByGenderMale,
+    filterByGenderFemale,
+    alphabetIncreasingSort, alphabetDescendingSort
+} from "@/shared/utils/sortFunctions.js";
 
 export function Home(){
     const {data, error, loading} = getUsers()
@@ -19,6 +25,12 @@ export function Home(){
         switch (sortState) {
             case "unsorted":
                 return <Table users={users} />
+            case 'alphabetIncreasing':
+                const usersSortedAlphabetIncreasing = alphabetIncreasingSort(users);
+                return <Table users={usersSortedAlphabetIncreasing} />
+            case 'alphabetDescending':
+                const usersSortedAlphabetDescending = alphabetDescendingSort(users);
+                return <Table users={usersSortedAlphabetDescending} />
             case 'increasing':
                 const usersSortedIncreasing = increasingSort(users);
                 return <Table users={usersSortedIncreasing} />
@@ -30,7 +42,7 @@ export function Home(){
                 return <Table users={usersFilteredMale} />
             case 'female':
                 const usersFilteredFemale = filterByGenderFemale(users);
-                return <Table users={usersFilteredFemale } />
+                return <Table users={usersFilteredFemale} />
             default:
                 return <Table users={users} />
         }
