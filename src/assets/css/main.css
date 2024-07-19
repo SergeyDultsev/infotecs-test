@@ -85,4 +85,14 @@ body {
   margin: 0 auto;
 }
 
+.container__title {
+  color: var(--color-main);
+  text-transform: uppercase;
+}
+
+.link {
+  color: var(--color-main);
+  text-decoration: underline;
+}
+
 /*# sourceMappingURL=main.css.map */

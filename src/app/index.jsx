@@ -1,14 +1,14 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from '@/pages/Home.jsx';
+import { Routes, Route } from 'react-router-dom';
+import { HomePage } from '@/pages/HomePage.jsx';
+import { SearchResultPage } from "@/pages/SearchResultPage.jsx";
 
 function App() {
     return (
         <div className="container">
-            <Router>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                </Routes>
-            </Router>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/search-result" element={<SearchResultPage />} />
+            </Routes>
         </div>
     );
 }
