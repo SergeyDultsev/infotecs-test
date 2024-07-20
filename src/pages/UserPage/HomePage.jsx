@@ -4,6 +4,7 @@ import {SortTable} from "@/features/users/components/SortTable/SortTable.jsx";
 import {Table} from "@/features/users/components/Table/Table.jsx";
 import {SearchBar} from "@/features/users/components/Search/SearchBar.jsx";
 import getUsers from "@/features/users/api/getUsers.js";
+import {ModalApp} from "@/shared/ui/Modal/ModalApp.jsx";
 import {
     increasingSort,
     descendingSort,
@@ -15,6 +16,7 @@ import {
 export function HomePage(){
     const { data, error, loading } = getUsers();
     const users = data && data.users ? data.users : [];
+    const [selectedUser, setSelectedUser] = useState(null);
     const [sortState, setSortState] = useState('unsorted');
     const navigate = useNavigate();
 
@@ -43,13 +45,19 @@ export function HomePage(){
 
     const renderTable = () => {
         const users = getSortedOrFiltered()
-        return <Table users={users} />
+        return <Table
+            users={users}
+            onUserSelect={handleUserSelect}/>
     }
 
     const onSearch = (key, query) => {
         navigate(`/search-result?key=${key}&value=${query}`);
     };
 
+    // Получение эмита из таблицы
+    const handleUserSelect = (user) => {
+        setSelectedUser(user);
+    };
 
     if (loading) return <Fragment>Загрузка...</Fragment>
     if (error) return <Fragment>Ошибка: {error.message} <Link className="link" to={"/"}>На главную</Link></Fragment>;
@@ -58,6 +66,7 @@ export function HomePage(){
         <Fragment>
             <SearchBar onSearch={onSearch}/>
             <SortTable onSortChange={handleSortChange} />
+            <ModalApp user={selectedUser} onClose={() => setSelectedUser(null)}></ModalApp>
             {renderTable()}
         </Fragment>
     )

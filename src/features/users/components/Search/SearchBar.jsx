@@ -14,7 +14,7 @@ export function SearchBar({ onSearch }) {
     }
 
     return (
-        <div className={SearchBarStyle.searchBar}>
+        <div className={SearchBarStyle['searchBar']}>
             <InputApp
                 value={key}
                 onChange={(event) => setKey(event.target.value)}
