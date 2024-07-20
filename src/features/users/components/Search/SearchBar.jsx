@@ -1,6 +1,6 @@
 import {useState} from "react";
-import {InputApp} from "@/components/ui/Input/InputApp.jsx";
-import {ButtonApp} from "@/components/ui/Button/ButtonApp.jsx";
+import {InputApp} from "@/shared/ui/Input/InputApp.jsx";
+import {ButtonApp} from "@/shared/ui/Button/ButtonApp.jsx";
 import SearchBarStyle from './SearchBar.module.scss';
 
 export function SearchBar({ onSearch }) {
@@ -25,7 +25,7 @@ export function SearchBar({ onSearch }) {
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 type="text"
-                placeholder="Значение поиска (например, 20)"
+                placeholder="Значение поиска (например, 40)"
             />
             <ButtonApp onClick={handleSearch} text={"Поиск"} />
         </div>

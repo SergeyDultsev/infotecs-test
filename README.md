@@ -1,5 +1,14 @@
 # React + Vite
 
+Стек разработки:
+JS(React), HTML, CSS SCSS.
+
+Методология для проектирования фронтенд-приложений [FSD](https://feature-sliced.design/ru/)
+
+Команды для запуск проекта:
+* npm install
+* npm run dev
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

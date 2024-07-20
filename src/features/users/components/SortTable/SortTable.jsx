@@ -1,4 +1,4 @@
-import {ButtonApp} from "@/components/ui/Button/ButtonApp.jsx";
+import {ButtonApp} from "@/shared/ui/Button/ButtonApp.jsx";
 import SortTableStyle from "./SortTable.module.scss"
 
 export function SortTable({ onSortChange }) {

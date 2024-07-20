@@ -11,12 +11,14 @@ const getUsers = () => {
                 const apiUrl = import.meta.env.VITE_API_URL;
                 const response = await fetch(`${apiUrl}users`);
 
-                if (response.status === 200) {
-                    const data = await response.json();
-                    setData(data);
+                if (!response.status === 200) {
+                    throw new Error(`HTTP ошибка! статус: ${response.status}`);
                 }
+
+                const data = await response.json();
+                setData(data);
             } catch (error) {
-                setError(error);
+                setError(error.message);
             } finally {
                 setLoading(false);
             }

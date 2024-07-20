@@ -1,5 +1,5 @@
-import { TableRow } from "@/components/TableRow/TableRow.jsx";
-import tableStyle from '@/components/Table/Table.module.scss';
+import { TableRow } from "@/features/users/components/TableRow/TableRow.jsx";
+import tableStyle from '@/features/users/components/Table/Table.module.scss';
 
 export function Table({users}) {
     return (

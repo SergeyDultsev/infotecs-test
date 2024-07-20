@@ -1,9 +1,9 @@
 import {Fragment, useState} from 'react';
 import {Link, useNavigate} from "react-router-dom";
-import {SortTable} from "@/components/SortTable/SortTable.jsx";
-import {Table} from "@/components/Table/Table.jsx";
-import {SearchBar} from "@/components/Search/SearchBar.jsx";
-import getUsers from "@/api/getUsers.js";
+import {SortTable} from "@/features/users/components/SortTable/SortTable.jsx";
+import {Table} from "@/features/users/components/Table/Table.jsx";
+import {SearchBar} from "@/features/users/components/Search/SearchBar.jsx";
+import getUsers from "@/features/users/api/getUsers.js";
 import {
     increasingSort,
     descendingSort,
