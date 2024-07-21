@@ -1,7 +1,7 @@
 {
   "name": "infotecs-test",
   "private": true,
-  "homepage": "/https://SergeyDultsev.github.io/infotecs-test-project.io",
+  "homepage": "/https://sergeydultsev.github.io/infotecs-test-project.io/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
